@@ -147,7 +147,7 @@ namespace BitZenyConfigCreator
             foreach (string ospath in _DIRs) {
                 foreach(CryptDir cd in dirs) {
                     string dir = ospath + Path.DirectorySeparatorChar + cd.dir;
-                    Console.WriteLine(dir);
+                   // Console.WriteLine(dir);
                     if (!dirs.Equals(null) && Directory.Exists(dir))
                         return dir;
                 }
