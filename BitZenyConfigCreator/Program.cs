@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace BitZenConfigCreator
+namespace BitZenyConfigCreator
 {
     using Model;
     using System.Net.Http;
@@ -19,7 +19,7 @@ namespace BitZenConfigCreator
         public static List<string> _DIRs = new List<string> {
                 System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar + "AppData" + Path.DirectorySeparatorChar+ "Roaming",    //Windows %appdata%
                 System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar + "Libray",    //MacOS ~/Libray/
-                System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar   //Ubuntu ~/
+                System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)    //Ubuntu ~/
             };
 
         static void Main(string[] args)
@@ -37,6 +37,10 @@ namespace BitZenConfigCreator
             Console.WriteLine("暗号通貨：" + Crypto);
 
 
+            /* DLしたJSONに変える */
+            //JsonModel jm = LoccalJsonLoad();
+            JsonModel jm = await GetWebJson();
+
             if (!isCanOS()) {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("[Warning!!]");
@@ -46,7 +50,7 @@ namespace BitZenConfigCreator
                 Console.ReadKey(true);
                 return;
             }
-            dir = getCryptDir(Crypto);
+            dir = getCryptDir(jm.CD);
             if(dir.Equals(string.Empty)) {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("この暗号通貨のディレクトリが作成されていません。");
@@ -57,9 +61,6 @@ namespace BitZenConfigCreator
             }
             Console.WriteLine("暗号通貨のディレクトリ:\t" + dir);
 
-            /* DLしたJSONに変える */
-            //JsonModel jm = LoccalJsonLoad();
-            JsonModel jm = await GetWebJson();
 
             //Node
             string node = string.Empty;
@@ -134,15 +135,23 @@ namespace BitZenConfigCreator
             return false;
         }
 
-        static public string getCryptDir(string crp = null)
+        static public string getCryptDir(List<CryptDir> dirs = null)
         {
             /*
             System.OperatingSystem os = System.Environment.OSVersion;
-            Console.WriteLine("このOSは" + os.ToString() + "です。");
+            Console.WriteLine("このOSは" + os.ToString() + "です。");vim 
             */
-            foreach (string str in _DIRs) {
-                if (!crp.Equals(null) && System.IO.Directory.Exists(str + System.IO.Path.DirectorySeparatorChar + crp))
-                    return str + System.IO.Path.DirectorySeparatorChar + crp;
+            if (dirs.Equals(null))
+                return string.Empty;
+
+            foreach (string ospath in _DIRs) {
+                foreach(CryptDir cd in dirs) {
+                    string dir = ospath + Path.DirectorySeparatorChar + cd.dir;
+                   // Console.WriteLine(dir);
+                    if (!dirs.Equals(null) && Directory.Exists(dir))
+                        return dir;
+                }
+                
             }
             //このOSは非対応
             return string.Empty;
