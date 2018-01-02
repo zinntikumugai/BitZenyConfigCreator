@@ -19,7 +19,7 @@ namespace BitZenyConfigCreator
         public static List<string> _DIRs = new List<string> {
                 System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar + "AppData" + Path.DirectorySeparatorChar+ "Roaming",    //Windows %appdata%
                 System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar + "Libray",    //MacOS ~/Libray/
-                System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + Path.DirectorySeparatorChar   //Ubuntu ~/
+                System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)    //Ubuntu ~/
             };
 
         static void Main(string[] args)
@@ -139,7 +139,7 @@ namespace BitZenyConfigCreator
         {
             /*
             System.OperatingSystem os = System.Environment.OSVersion;
-            Console.WriteLine("このOSは" + os.ToString() + "です。");
+            Console.WriteLine("このOSは" + os.ToString() + "です。");vim 
             */
             if (dirs.Equals(null))
                 return string.Empty;
@@ -147,6 +147,7 @@ namespace BitZenyConfigCreator
             foreach (string ospath in _DIRs) {
                 foreach(CryptDir cd in dirs) {
                     string dir = ospath + Path.DirectorySeparatorChar + cd.dir;
+                    Console.WriteLine(dir);
                     if (!dirs.Equals(null) && Directory.Exists(dir))
                         return dir;
                 }
