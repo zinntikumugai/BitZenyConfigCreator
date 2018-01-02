@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace zinntikumugaiBitZenConfigCreator
+namespace BitZenConfigCreator
 {
     using Model;
     using System.Net.Http;

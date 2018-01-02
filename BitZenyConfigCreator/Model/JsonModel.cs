@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace zinntikumugaiBitZenConfigCreator.Model
+namespace BitZenConfigCreator.Model
 {
     class JsonModel
     {
