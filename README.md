@@ -10,7 +10,7 @@ It is a tool to automatically create bitzeny.config in BitZeny's data folder
 1. Build Run
    1. Get [.Net Core SDK](https://dot.net/core)
    1. Execute `dotnet restore `
-   1. Execute `dotnet run`
+   1. Execute `dotnet run --project BitZenyConfigCreator`
 1. Release Run
    1. Get [Release](https://github.com/zinntikumugai/BitZenyConfigCreator/releases)
    2. Run
