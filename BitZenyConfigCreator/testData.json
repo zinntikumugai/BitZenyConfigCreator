@@ -1,0 +1,15 @@
+﻿{
+  "name": "BitZeny",
+  "date": "2017-12-29 17:06:00",
+  "filename": "bitzeny.conf",
+  "dirs": [
+    {
+      "os": "Windows",
+      "dir": "\\BitZeny"
+    }
+  ],
+  "node": [
+    "27.96.51.15",
+    "58.191.220.12"
+  ]
+}
