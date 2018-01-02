@@ -3,6 +3,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/zinntikumugai/BitZenyConfigCreator.svg)](https://github.com/zinntikumugai/BitZenConfigCreator)
 [![GitHub top language](https://img.shields.io/github/languages/top/zinntikumugai/BitZenyConfigCreator.svg)](https://github.com/zinntikumugai/BitZenConfigCreator)
 [![GitHub Release Date](https://img.shields.io/github/release-date/zinntikumugai/BitZenyConfigCreator.svg)](https://github.com/zinntikumugai/BitZenyConfigCreator/releases)
+[![Build Status](https://travis-ci.org/zinntikumugai/BitZenyConfigCreator.svg?branch=master)](https://travis-ci.org/zinntikumugai/BitZenyConfigCreator)
 
 It is a tool to automatically create bitzeny.config in BitZeny's data folder
 
