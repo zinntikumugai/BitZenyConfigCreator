@@ -13,4 +13,4 @@ mono: none
 script:
     - git submodule update --init --recursive
     - dotnet restore
-    - dotnet build --project BitZenyConfigCreator
+    - dotnet build
