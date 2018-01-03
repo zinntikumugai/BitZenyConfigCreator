@@ -5,12 +5,13 @@ matrix:
         - os: linux #Ubuntu 
           dist: trusty
           sudo: required
-          dotnet: 2.0.0
+          #dotnet: 2.0.0
         - os: osx #OSX 10.12
           osx_image: xcode9
-          dotnet: 2.0.0
+          #          dotnet: 2.0.0
         - os: osx
           osx_image: xcode9.2
+dotnet: 2.0.0
 mono: none
 script:
     - git submodule update --init --recursive
