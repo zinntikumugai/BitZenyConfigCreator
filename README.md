@@ -12,6 +12,7 @@ It is a tool to automatically create bitzeny.config in BitZeny's data folder
 | [TravisCi](https://travis-ci.org/) | [![Build Status](https://travis-ci.org/zinntikumugai/BitZenyConfigCreator.svg?branch=master)](https://travis-ci.org/zinntikumugai/BitZenyConfigCreator) |
 | [Appveyor](https://appveyor.com) | [![Build status](https://ci.appveyor.com/api/projects/status/6iti3i7ub4av18is?svg=true)](https://ci.appveyor.com/project/zinntikumugai/bitzenyconfigcreator) |
 | [SemaPhore](https://semaphoreci.com) | [![semaphoreci Build Status](https://semaphoreci.com/api/v1/zinntikumugai/bitzenyconfigcreator/branches/master/badge.svg)](https://semaphoreci.com/zinntikumugai/bitzenyconfigcreator) |
+| CircleCi | [![CircleCI](https://circleci.com/gh/zinntikumugai/BitZenyConfigCreator/tree/master.svg?style=shield)](https://circleci.com/gh/zinntikumugai/BitZenyConfigCreator/tree/master) |
 
 # How to use
 1. Build Run
