@@ -5,7 +5,9 @@ branches:
   only:
   - master
 image: Visual Studio 2017
-configuration: Release
+configuration: 
+  - Debug
+  - Release
 platform: Any CPU
 dotnet_csproj:
   patch: true
