@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: microsoft/dotnet:2.0.0-sdk
+        environment:
+          DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+          NUGET_XMLDOC_MODE: skip
+    steps:
+      - checkout
+      - run:
+          name: Print the Current Time
+          command: date
+      - run:
+          name: Build
+          command: |
+             dir;
+             ls -la;
+             dotnet restore;
+             dotnet build;
