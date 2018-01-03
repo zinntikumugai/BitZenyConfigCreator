@@ -14,5 +14,6 @@ matrix:
 mono: none
 script:
     - git submodule update --init --recursive
+    - dotnet --info
     - dotnet restore
     - dotnet build
